@@ -404,7 +404,7 @@ class="flex items-center px-6 py-3 hover:bg-gray-800 <?php echo e(request()->rou
                     <div class="flex items-center gap-5 p-4 rounded-3xl border-2 border-gray-50 hover:border-blue-100 hover:bg-blue-50/20 transition-all group">
                         <div class="h-20 w-20 bg-white rounded-2xl border-2 border-gray-100 flex items-center justify-center shrink-0 shadow-sm">
                             <?php if($item->image): ?>
-                                <img src="<?php echo e(asset('storage/' . $item->image)); ?>" class="h-16 w-16 object-contain group-hover:scale-110 transition-transform">
+                                <img src="<?php echo e(asset($item->image)); ?>" class="h-16 w-16 object-contain group-hover:scale-110 transition-transform">
                             <?php else: ?>
                                 <span class="text-[10px] font-black text-gray-300 uppercase tracking-widest">No Image</span>
                             <?php endif; ?>

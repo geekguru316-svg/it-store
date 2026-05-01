@@ -69,7 +69,7 @@
                     
                     <div class="h-48 w-full overflow-hidden rounded-xl mb-4 bg-gray-100 flex items-center justify-center relative z-10 pointer-events-none">
                         @if($product->image)
-                            <img src="{{ asset('storage/'.$product->image) }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                            <img src="{{ asset($product->image) }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
                         @else
                             <span class="text-gray-400">No Image</span>
                         @endif
@@ -177,7 +177,7 @@
                         <div class="relative h-48 bg-gray-50 flex items-center justify-center p-6 overflow-hidden">
                             <a href="{{ route('products.show', $product->id) }}" class="block">
                                 @if($product->image)
-                                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                                    <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
                                 @else
                                     <div class="h-full w-full flex items-center justify-center text-gray-400 font-bold italic tracking-tighter uppercase text-xs">No Image</div>
                                 @endif
