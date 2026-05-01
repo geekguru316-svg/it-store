@@ -25,6 +25,10 @@ class Product extends Model
             'Digital Cameras',
             'Gaming Consoles',
             'Gadgets',
+            'Printers',
+            'Networking',
+            'Peripherals',
+            'Monitors',
         ];
     }
     public function images()

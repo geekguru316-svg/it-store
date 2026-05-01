@@ -346,7 +346,7 @@ class="flex items-center px-6 py-3 hover:bg-gray-800 {{ request()->routeIs('admi
         © 2026 IT Store. All rights reserved.
         <br>
         <br>
-        <!--<span class="text-gray-500">Managed by Glenda</span>-->
+        <!--<span class="text-gray-500">Managed by Arjun Haincadto</span>-->
     </div>
 
 </footer>

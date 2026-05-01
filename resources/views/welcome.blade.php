@@ -300,7 +300,7 @@
             <h2 class="text-3xl font-black italic tracking-tighter text-blue-900 mb-4">About the Developer</h2>
 
             <p class="mt-4 text-blue-800 text-lg leading-relaxed font-medium">
-                Managed and developed by <strong class="bg-blue-600 text-white px-2 py-1 rounded-md mx-1 shadow-sm">Glenda Agnes</strong>.<br>
+                Managed and developed by <strong class="bg-blue-600 text-white px-2 py-1 rounded-md mx-1 shadow-sm">Arjun Haincadto</strong>.<br>
                 Passionate in building scalable web systems and professional business solutions.
             </p>
         </div>
