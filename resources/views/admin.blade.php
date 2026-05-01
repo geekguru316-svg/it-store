@@ -206,7 +206,7 @@
                             <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                                 <div class="flex items-center space-x-4">
                                     @if($product->image)
-                                        <img src="{{ asset($product->image) }}"
+                                        <img src="{{ asset('storage/' . $product->image) }}"
                                              alt="{{ $product->name }}"
                                              class="w-16 h-16 object-cover rounded-lg">
                                     @else

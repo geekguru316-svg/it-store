@@ -13,7 +13,7 @@
                     <div class="flex items-center">
                         <div class="h-12 w-12 bg-white rounded border flex items-center justify-center mr-3">
                              @if($product->image)
-                                <img src="{{ asset($product->image) }}" class="h-10 w-10 object-contain">
+                                <img src="{{ asset('storage/' . $product->image) }}" class="h-10 w-10 object-contain">
                              @else
                                 <span class="text-xs text-gray-400 font-bold">IT</span>
                              @endif

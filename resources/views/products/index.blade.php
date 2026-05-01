@@ -8,7 +8,7 @@
         <div class="relative overflow-hidden rounded-3xl shadow-2xl mb-12 group">
             <div id="slider" class="flex transition-transform duration-1000 cubic-bezier(0.4, 0, 0.2, 1)">
                 <div class="w-full shrink-0 relative h-[350px]">
-                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                    <img src="{{ asset('storage/products/laptop.jpg') }}" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-center p-12">
                         <div>
                             <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Limited Offer</span>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="w-full shrink-0 relative h-[350px]">
-                    <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                    <img src="{{ asset('storage/products/networking.jpg') }}" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-center p-12">
                         <div>
                             <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">New Arrival</span>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="w-full shrink-0 relative h-[350px]">
-                    <img src="https://images.unsplash.com/photo-1544244015-0cd4b3ff6f3c?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                    <img src="{{ asset('storage/products/printer.jpg') }}" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-center p-12">
                         <div>
                             <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Accessories</span>
@@ -69,7 +69,7 @@
                     
                     <div class="h-48 w-full overflow-hidden rounded-xl mb-4 bg-gray-100 flex items-center justify-center relative z-10 pointer-events-none">
                         @if($product->image)
-                            <img src="{{ asset($product->image) }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                            <img src="{{ asset('storage/' . $product->image) }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
                         @else
                             <span class="text-gray-400">No Image</span>
                         @endif
@@ -177,7 +177,7 @@
                         <div class="relative h-48 bg-gray-50 flex items-center justify-center p-6 overflow-hidden">
                             <a href="{{ route('products.show', $product->id) }}" class="block">
                                 @if($product->image)
-                                    <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
                                 @else
                                     <div class="h-full w-full flex items-center justify-center text-gray-400 font-bold italic tracking-tighter uppercase text-xs">No Image</div>
                                 @endif

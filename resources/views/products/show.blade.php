@@ -59,19 +59,19 @@
                 <!-- Main Image -->
                 <div class="border p-4 rounded-lg bg-white mb-4 shadow-sm">
                     <img id="mainImage"
-                        src="{{ asset($product->images->first()->image ?? $product->image) }}"
+                        src="{{ asset('storage/' . ($product->images->first()->image ?? $product->image)) }}"
                         class="w-full h-[450px] object-contain transition-all duration-300">
                 </div>
 
                 <!-- Thumbnails -->
                 <div class="flex gap-2 overflow-x-auto pb-2">
                     @if($product->image)
-                        <img src="{{ asset($product->image) }}" 
+                        <img src="{{ asset('storage/' . $product->image) }}" 
                              class="w-20 h-20 object-cover border-2 border-blue-500 rounded cursor-pointer hover:border-blue-400"
                              onclick="changeImage(this)">
                     @endif
                     @foreach($product->images as $img)
-                        <img src="{{ asset($img->image) }}" 
+                        <img src="{{ asset('storage/' . $img->image) }}" 
                              class="w-20 h-20 object-cover border-2 border-transparent rounded cursor-pointer hover:border-blue-400 transition-colors"
                              onclick="changeImage(this)">
                     @endforeach
@@ -190,7 +190,7 @@
                         <a href="{{ route('products.show', $related) }}" class="group">
                             <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                 <div class="aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
-                                    <img src="{{ $related->image ? asset($related->image) : asset('images/default.png') }}" 
+                                    <img src="{{ $related->image ? asset('storage/' . $related->image) : asset('images/default.png') }}" 
                                          class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <h3 class="font-bold text-gray-800 text-sm mb-1 line-clamp-1 group-hover:text-red-600 transition-colors">
