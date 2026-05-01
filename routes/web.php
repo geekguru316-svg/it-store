@@ -59,14 +59,24 @@ Route::get('/track-order', function () {
 
 Route::get('/run-seeder', function () {
     try {
-        // Create storage link if it doesn't exist
+        // Force recreate storage link on Render
+        $storagePath = public_path('storage');
+        if (file_exists($storagePath)) {
+            // Remove if it's a directory or a broken link
+            if (is_link($storagePath)) {
+                unlink($storagePath);
+            } else {
+                \Illuminate\Support\Facades\File::deleteDirectory($storagePath);
+            }
+        }
+        
         \Illuminate\Support\Facades\Artisan::call('storage:link');
         
         // Seed the products
         \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'ProductSeeder', '--force' => true]);
         
-        return 'Storage link created and Seeder executed successfully!';
+        return 'Storage link recreated and Seeder executed successfully!';
     } catch (\Exception $e) {
-        return 'Error: ' . $e->getMessage();
+        return 'Error: ' . $e->getMessage() . ' at line ' . $e->getLine();
     }
 });
