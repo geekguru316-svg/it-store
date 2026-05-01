@@ -53,7 +53,7 @@
                         <label class="block text-sm font-medium mb-2">Current Image</label>
 
                         @if($product->image)
-                            <img src="{{ asset('storage/' . $product->image) }}" class="w-32 h-32 object-cover rounded border">
+                            <img src="{{ asset($product->image) }}" class="w-32 h-32 object-cover rounded border">
                         @else
                             <p class="text-gray-500 text-sm">No image uploaded</p>
                         @endif
