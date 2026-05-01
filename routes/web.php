@@ -57,11 +57,3 @@ Route::get('/track-order', function () {
 })->name('track-order');
 
 
-Route::get('/run-seeder', function () {
-    try {
-        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'ProductSeeder', '--force' => true]);
-        return 'Seeder executed successfully!';
-    } catch (\Exception $e) {
-        return 'Error: ' . $e->getMessage();
-    }
-});
