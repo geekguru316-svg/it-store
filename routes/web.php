@@ -59,8 +59,13 @@ Route::get('/track-order', function () {
 
 Route::get('/run-seeder', function () {
     try {
+        // Create storage link if it doesn't exist
+        \Illuminate\Support\Facades\Artisan::call('storage:link');
+        
+        // Seed the products
         \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'ProductSeeder', '--force' => true]);
-        return 'Seeder executed successfully!';
+        
+        return 'Storage link created and Seeder executed successfully!';
     } catch (\Exception $e) {
         return 'Error: ' . $e->getMessage();
     }
