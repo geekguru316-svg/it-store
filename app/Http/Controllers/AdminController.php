@@ -157,6 +157,9 @@ class AdminController extends Controller
             'image' => 'nullable|image'
         ]);
 
+        // Remove image from data if not uploaded, to avoid nulling existing image
+        unset($data['image']);
+
         // Handle image upload
         if ($request->hasFile('image')) {
             if ($product->image) {
